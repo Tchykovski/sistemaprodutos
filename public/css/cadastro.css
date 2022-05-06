@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+body {
+  background-color: rgb(34, 34, 34);
+  color: white;
+  font-family: Poppins;
+  max-width: 1186px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#title {
+  flex-direction: row;
+  line-height: 10px;
+  font-family: Poppins;
+}
+
+#logo {
+  display: none
+}
+
+li {
+  display: inline-block;
+  margin: 20px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #fd7f0c;
+  transition: all .5s
+}
+
+#inscrevase-btn {
+  border: 2px solid #fd7f0c;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+#inscrevase-btn:hover {
+  background-color: #fd7f0c;
+  color: white;
+  transition: all .5s
+}
+
+
+
+
+form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.form-control label {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.form-control input,
+.form-control textarea {
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #F6982d;
+}
+
+form input[type='submit'],
+.btn {
+  background-color: transparent;
+  color: #F6982d;
+  border: 2px solid #F6982d;
+  padding: 0.5em 1.2em;
+  margin-bottom: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: .5s
+}
+
+form input[type='submit']:hover,
+.btn:hover {
+  background-color: #F6982d;
+  color: #fff
+}
+
+form label {
+  color: #F6982d;
+}
+
+form p {
+  text-align: center;
+}
+
+
+#container-btn-cadastrar {
+  width: 100%;
+  text-align: center;
+}
+
+
+h2 {
+  color: #F6982d;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 535px) {
+  header {
+    flex-direction: column;
+  }
+
+}

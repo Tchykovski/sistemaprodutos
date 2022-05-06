@@ -1,15 +1,17 @@
 const express = require('express');
-const { use } = require('express/lib/application');
 const app = express();
 const conn = require('./database/connection')
-const Produtos = require('./models/Produtos')
-const produtosController = require('./models/produtoscontroller')
-
+const Cadastros = require('./models/Cadastro')
+const cadastroController = require('./controllers/cadastroController')
+const Listas = require('./models/Lista')
+const listaController = require('./controllers/listaController')
 
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
+
+//autenticando o banco de dados
 conn.authenticate()
     .then(() => {
         console.info('Banco Conectado!!!')
@@ -18,29 +20,42 @@ conn.authenticate()
         console.info(erro)
     })
 
+
+//Configurando a engine de views
+
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.use('/', produtosController)
 
-
-app.get('/cadproduto', (req, res) => {
-    res.render('lista')
-})
-
-
+//rota index
 
 app.get('/', (req, res) => {
-
-    Produtos.findAll(
-
-    ).then(produtos => {
-        res.render('listagem', { produtos: produtos })
-    }).catch(erro => {
-        console.info(erro)
-    })
-
+    res.render('index')
 })
+//rota sobre
+app.get('/sobre', (req, res) => {
+    res.render('sobre')
+})
+
+
+app.use('/', cadastroController)
+app.use('/', listaController)
+
+
+
+app.get('/lista', (req, res) => {
+    Listas.findAll().then(produtos => {
+        res.render('lista', {
+            produtos: produtos
+        })
+    })
+})
+
+//rota login
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+
 
 
 app.listen(3000, () => {

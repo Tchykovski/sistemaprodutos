@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/cadastro_produto.css">
+
+    <title>LisToHome</title>
+</head>
+
+<%- include('./partials/navbar.ejs') %>
+
+    <main>
+        <h2>Cadastre seus Produtos</h2>
+
+        <form action="/perfil/salvarproduto" method="post">
+
+            <div class="form-control">
+                <label for="nome_produto">Nome do produto:</label>
+                <input type="text" name="nome_produto" placeholder="Digite o nome do produto" required>
+            </div>
+
+            <div class="form-control">
+                <label for="preco_produto">Preço:</label>
+                <input type="text" name="preco_produto" placeholder="Digite o preço do produto" required>
+            </div>
+
+            <div class="form-control">
+                <label for="qtd_produto">Quantidade:</label>
+                <input type="number" min=1 name="qtd_produto" placeholder="Digite a quantidade do produto" required>
+            </div>
+
+            <div class="form-control">
+                <label for="marca">Marca:</label>
+                <input type="text" name="marca_produto" placeholder="Digite a marca do produto " required>
+            </div>
+
+            <div id="container-btn-cadastrar">
+                <input type="submit" id="btn-cadastrar" value="Cadastrar Produto">
+            </div>
+
+        </form>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>

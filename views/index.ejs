@@ -1,0 +1,31 @@
+<%- include('./partials/header.ejs') %>
+
+    <%- include('./partials/navbar.ejs') %>
+
+        <main>
+            <aside>
+                <span>
+                    <h2>Inscreva-se agora</h2>
+                </span>
+                <h3>E tenha sua lista de compras na palma da mão.</h3>
+
+                <p>
+                    O site LisToHome tem como objetivo auxiliar o cliente na execução de uma lista de compras para
+                    melhor
+                    organização, controte de tempo, controle financeiro e esquematização da lista. Pode ser dividido em
+                    categorias, adicionar e retirar itens da lista de compra e suas respectivas quantidades.
+                    Liberado para todas as faixas etárias.
+                </p>
+
+                <form action="/cadastro">
+                    <input type="submit" value="Cadastrar">
+                </form>
+
+            </aside>
+
+            <article>
+                <img src="../images/logo.png" id="logohome">
+            </article>
+        </main>
+
+        <%- include('./partials/footer.ejs') %>

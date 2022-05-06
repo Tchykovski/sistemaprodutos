@@ -3,7 +3,7 @@
 const Sequelize = require('sequelize')
 
 //Configuração para a conexão.
-const conn = new Sequelize('lista', 'root', 'Aa40028922', {
+const conn = new Sequelize('listohome', 'root', 'Aa40028922', {
     host: 'localhost',
     dialect: 'mysql'
 
